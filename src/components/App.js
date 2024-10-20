@@ -1,18 +1,14 @@
+import React from 'react'
+import { useParams } from 'react-router-dom'
 
-import React from "react";
-import './../styles/App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemList from "./ItemList";
-import ItemDetails from "./ItemDetails";
-const App = () => {
+const ItemDetail = () => {
+    const{id} = useParams()
   return (
-    <BrowserRouter>
-    <Routes>
-     <Route path="/" element={<ItemList />}/>
-     <Route path="/item/:id" element={<ItemDetails />}/>
-    </Routes>
-    </BrowserRouter>
+    <div>
+        <h1>Item {id}</h1>
+        <p>Description for Item {id}</p>
+    </div>
   )
 }
 
-export default App
+export default ItemDetail
